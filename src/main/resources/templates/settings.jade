@@ -1,0 +1,106 @@
+extends layout
+
+include mixins/_breadcrumb
+
+mixin renderError (error)
+  if error.message
+    .form-item__error-wrapper
+      svg.form-item__error-icon
+          use(xlink:href='/icons/icons.svg#error')
+      .form-item__error-message= error.message
+
+block content
+  .layout-centered-small
+    +breadcrumb
+    h1= title
+    p #{settingsIntroLabel}
+
+    if successful
+      .status-block.status-block--success
+        svg.status-block__icon.status-block__icon--success
+          use(xlink:href='/icons/icons.svg#success')
+        .status-block__content
+          .status-block__title #{changesSavedLabel}
+
+    if errors.hasErrors
+      .status-block.status-block--error
+        svg.status-block__icon.status-block__icon--error
+          use(xlink:href='/icons/icons.svg#error')
+        .status-block__content
+          .status-block__title #{errorOccurredTitleLabel}
+          .status-block__message #{errorOccurredMessageLabel}
+
+    if !errors.hasErrors
+      .status-block.status-block--info
+        svg.status-block__icon.status-block__icon--info
+          use(xlink:href='/icons/icons.svg#info')
+        .status-block__content
+          .status-block__message
+            if !usesCustomCredentials
+              p
+                em #{usingServerCredentialsLabel}
+              p
+                strong #{connectedToSpaceLabel}:
+                br
+                span #{spaceName} (#{spaceId})
+              p
+                strong #{credentialSourceLabel}:
+                br
+                span #{loadedFromLocalFileLabel}&nbsp;
+                 a(href="#{loadedFromLocalFileUrl}" target="_blank" rel="noopener") #{loadedFromLocalFileName}
+              p
+                em #{overrideConfigLabel}
+            else
+              p
+                em #{usingSessionCredentialsLabel}
+              p
+                strong #{connectedToSpaceLabel}:
+                br
+                span #{spaceName} (#{spaceId})
+
+              form(action='/settings?reset=true' method='POST')
+                p
+                  strong #{applicationCredentialsLabel}:
+                  br
+                  button(type="submit") #{resetCredentialsLabel}
+                  br
+                  a(href='#{deepLinkUrl}' class="status-block__sharelink") #{copyLinkLabel}
+              p
+                em #{overrideConfigLabel}
+
+    form(action='/settings!{base.meta.queryString}' method="POST" class="form")
+      .form-item
+        label(for="input-space-id") #{spaceIdLabel}
+        input(type="text" name="space_id" id="input-space-id" required value=settings.spaceId)
+        if errors.spaceId
+          +renderError(errors.spaceId)
+        .form-item__help-text #{spaceIdHelpText}
+
+      .form-item
+        label(for="input-delivery-token") #{deliveryTokenLabel}
+        input(type="text" name="delivery_token" id="input-delivery-token" required value=settings.deliveryToken)
+        if errors.deliveryToken
+          +renderError(errors.deliveryToken)
+        .form-item__help-text
+          | #{contentDeliveryApiHelpText}&nbsp;
+          a(href='https://www.contentful.com/developers/docs/references/content-delivery-api/' target='_blank' rel='noopener') Content Delivery API.
+
+      .form-item
+        label(for="input-preview-token") #{previewTokenLabel}
+        input(type="text" name="preview_token" id="input-preview-token" required value=settings.previewToken)
+        if errors.previewToken
+          +renderError(errors.previewToken)
+        .form-item__help-text
+          | #{contentPreviewApiHelpText}&nbsp;
+          a(href='https://www.contentful.com/developers/docs/references/content-preview-api/' target='_blank' rel='noopener') Content Preview API.
+
+      .form-item
+        if editorialFeaturesEnabled
+          input(type="checkbox" name="editorial_features" id="input-editorial-features" checked value="enabled")
+        else
+          input(type="checkbox" name="editorial_features" id="input-editorial-features" value="enabled")
+        label(for="input-editorial-features") #{enableEditorialFeaturesLabel}
+        .form-item__help-text #{enableEditorialFeaturesHelpText}
+
+      .form-item
+        input.cta(type="submit" value=saveSettingsButtonLabel)

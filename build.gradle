@@ -1,0 +1,41 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.8.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.contentful.tea.java'
+version = '1.0.0'
+sourceCompatibility = 1.8
+
+mainClassName = 'com.contentful.tea.java.MainController'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework:spring-core'
+    compile 'org.springframework:spring-webmvc'
+    compile 'org.springframework.boot:spring-boot-starter-data-rest:1.5.8.RELEASE'
+    compile 'org.springframework.boot:spring-boot-devtools:1.5.8.RELEASE'
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile 'com.atlassian.commonmark:commonmark:0.10.0'
+    compile 'de.neuland-bfi:jade4j:1.2.7'
+
+    compile 'com.contentful.java:java-sdk:10.0.0'
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test:1.5.8.RELEASE'
+    testCompile 'com.squareup.okhttp3:mockwebserver:3.8.1'
+    testCompile 'commons-io:commons-io:2.5'
+}

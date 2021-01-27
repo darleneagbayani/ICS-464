@@ -1,0 +1,21 @@
+include _entryState
+
+mixin editorialFeatures(item)
+  if base.meta.editorialFeatures
+    .editorial-features
+      if item.base.meta.draft || item.base.meta.pendingChanges
+        .editorial-features__item
+          +entryState(item.base.meta.draft, item.base.meta.pendingChanges)
+      if item.draft || item.pendingChanges
+        .editorial-features__item
+          +entryState(item.draft, item.pendingChanges)
+      .editorial-features__item
+        a.editorial-features__text(
+          href='!{base.meta.deeplinkToContentful}'
+          target='_blank'
+          rel='noopener'
+        ) #{base.labels.editInWebAppLabel}
+        .editorial-features__hint-wrapper
+          svg.editorial-features__hint-icon
+            use(xlink:href='/icons/icons.svg#info')
+          .editorial-features__hint-message #{base.labels.editorialFeaturesHint}

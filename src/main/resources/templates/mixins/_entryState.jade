@@ -1,0 +1,5 @@
+mixin entryState(draft, pending)
+  if draft
+    .pill.pill--draft #{base.labels.draftLabel}
+  if pending
+    .pill.pill--pending-changes #{base.labels.pendingChangesLabel}

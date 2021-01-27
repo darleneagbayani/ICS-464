@@ -1,0 +1,34 @@
+extends layout
+
+include mixins/_breadcrumb
+include mixins/_courseCard
+include mixins/_editorialFeatures
+
+block content
+  .layout-no-sidebar
+    +breadcrumb
+  .layout-sidebar
+    section.layout-sidebar__sidebar
+      .layout-sidebar__sidebar-header
+        h2.layout-sidebar__sidebar-title #{base.labels.categoriesLabel}
+      .layout-sidebar__sidebar-content
+        .sidebar-menu
+          ul.sidebar-menu__list
+            li.sidebar-menu__item
+              a(href='/courses!{base.meta.queryString}' class='sidebar-menu__link !{base.meta.allCoursesCssClass}') #{base.labels.allCoursesLabel}
+            each category in categories
+              li.sidebar-menu__item
+                a(href='/courses/categories/!{category.slug}!{base.meta.queryString}' class='sidebar-menu__link !{category.cssClass}') #{category.title}
+    section.layout-sidebar__content
+      .courses
+        h1= title
+        +editorialFeatures(course)
+        .grid-list
+          if courses
+            each course in courses
+              .grid-list__item
+                +courseCard(course)
+          else
+              .course-card
+                h2(class='course-card__title') #{base.labels.noContentLabel}
+                p(class='course-card__description') #{base.labels.errorDoesNotExistLabel}

@@ -1,0 +1,24 @@
+extends layout
+
+include mixins/_breadcrumb
+
+block content
+  .layout-centered
+    .error
+      h1 !{somethingWentWrongLabel} (!{status})
+      h2 !{tryLabel}
+      ul
+        each hint in hints
+          li !{hint}
+      if responseData
+        h2 !{responseDataLabel}
+        pre.error__stack-trace
+          code.shell !{responseData}
+      if useCustomCredentials
+        form(action='/settings?reset=true' method='POST')
+          p
+            button(type="submit") #{resetCredentialsLabel}
+      if stack
+        //
+          !{stackTraceLabel}
+          !{stack}

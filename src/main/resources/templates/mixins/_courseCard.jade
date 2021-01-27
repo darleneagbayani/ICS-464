@@ -1,0 +1,18 @@
+include _entryState
+
+mixin courseCard(course)
+  .course-card
+    .course-card__categories
+      if(course.categories)
+        each category in course.categories
+          .course-card__category
+            a.course-card__category-link(href='/courses/categories/!{category.slug}!{base.meta.queryString}') #{category.title}
+    h2.course-card__title
+      a(href='/courses/!{course.slug}!{base.meta.queryString}')= course.title
+      if (course.draft || course.pendingChanges)
+        .editorial-features
+          .editorial-features__item
+            +entryState(course.draft, course.pendingChanges)
+    p.course-card__description= course.shortDescription
+    .course-card__link-wrapper
+      a.course-card__link(href='/courses/!{course.slug}!{base.meta.queryString}') #{base.labels.viewCourseLabel}
