@@ -20,3 +20,8 @@ Notes: To run project when downloading main with missing files, you must:
 * Once a task is complete, push the final version to it's corresponding branch
 * Have team member approve and merge to main branch
 * Once approved and merged, move from in progress to done in Projects Kanban
+
+### Added Dependencies
+* React Collapsible (For drop down accordion menus within the About page)
+* Link to repository: https://github.com/glennflanagan/react-collapsible
+* Run $npm i react-collapsible to add it to your project
