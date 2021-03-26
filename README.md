@@ -26,3 +26,8 @@ Notes: To run project when downloading main with missing files, you must:
 * Link to repository: https://github.com/oblador/react-native-collapsible
 * React Native Animatable
 * Link to repository: https://github.com/oblador/react-native-animatable
+
+### Node Modules Changes
+* ViewPropTypes needs to be mocked in the following directory: node_modules/react-native-web/dist/index.js
+* The following line of code needs to be added to index.js: 
+```export const ViewPropTypes = { style: null };```
