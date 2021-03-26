@@ -22,6 +22,12 @@ Notes: To run project when downloading main with missing files, you must:
 * Once approved and merged, move from in progress to done in Projects Kanban
 
 ### Added Dependencies
-* React Collapsible (For drop down accordion menus within the About page)
-* Link to repository: https://github.com/glennflanagan/react-collapsible
-* Run $npm i react-collapsible to add it to your project
+* React Native Collapsible (For drop down accordion menus within the About page)
+* Link to repository: https://github.com/oblador/react-native-collapsible
+* React Native Animatable
+* Link to repository: https://github.com/oblador/react-native-animatable
+
+### Node Modules Changes
+* ViewPropTypes needs to be mocked in the following directory: node_modules/react-native-web/dist/index.js
+* The following line of code needs to be added to index.js: 
+```export const ViewPropTypes = { style: null };```
