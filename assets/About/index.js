@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
+<<<<<<< HEAD
 import styles from './styles';
 import Collapsible from 'react-collapsible';
 
@@ -24,6 +25,13 @@ function About() {
             <Text>some styling</Text>
           </Collapsible>
         </Collapsible>
+=======
+
+function About() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>About Screen</Text>
+>>>>>>> parent of d168525... About Page Mock up
       </View>
     );
   }

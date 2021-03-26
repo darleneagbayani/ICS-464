@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -24,3 +25,5 @@ const styles = StyleSheet.create({
 });
 
 export default styles;
+=======
+>>>>>>> parent of d168525... About Page Mock up
