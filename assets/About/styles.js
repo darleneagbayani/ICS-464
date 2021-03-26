@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     header: {
         width: '100%',
-        position: 'text',
+        //position: 'absolute',
         top: 60,
         zIndex: 100,
         justifyContent: 'center',
@@ -25,5 +24,3 @@ const styles = StyleSheet.create({
 });
 
 export default styles;
-=======
->>>>>>> parent of d168525... About Page Mock up
