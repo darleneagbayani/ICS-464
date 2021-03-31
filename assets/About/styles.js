@@ -4,7 +4,9 @@ import Constants from 'expo-constants';
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#F5FCFF',
+      justifyContent: 'center',
+      padding: 12,
+      backgroundColor: 'transparent',
       paddingTop: Constants.statusBarHeight,
     },
     title: {
@@ -14,7 +16,7 @@ const styles = StyleSheet.create({
       marginBottom: 20,
     },
     header: {
-      backgroundColor: '#F5FCFF',
+      backgroundColor: '#ffffff',
       padding: 10,
     },
     headerText: {
@@ -24,40 +26,17 @@ const styles = StyleSheet.create({
     },
     content: {
       padding: 20,
-      backgroundColor: '#fff',
+      backgroundColor: '#ffffff'
     },
     active: {
-      backgroundColor: 'rgba(255,255,255,1)',
+      backgroundColor: '#ffffff', // The content that drops down after press
+      borderWidth: 2,
+      borderRadius: 10
     },
-    inactive: {
-      backgroundColor: 'rgba(245,252,255,1)',
-    },
-    selectors: {
-      marginBottom: 10,
-      flexDirection: 'row',
-      justifyContent: 'center',
-    },
-    selector: {
-      backgroundColor: '#F5FCFF',
-      padding: 10,
-    },
-    activeSelector: {
-      fontWeight: 'bold',
-    },
-    selectTitle: {
-      fontSize: 14,
-      fontWeight: '500',
-      padding: 10,
-    },
-    multipleToggle: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-      marginVertical: 30,
-      alignItems: 'center',
-    },
-    multipleToggle__title: {
-      fontSize: 16,
-      marginRight: 8,
-    },
+    inactive: { // The dropdown box itself
+      backgroundColor: 'white',
+      borderWidth: 2,
+      borderRadius: 10
+    }
   });
   export default styles;
