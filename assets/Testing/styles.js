@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center', 
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingTop: '10px',
+        paddingTop: '10%',
     },
 
     tabContainer: {
@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
         color: 'tomato',
         fontSize: 22,
         fontWeight: '700',
-        paddingLeft: 25,
         marginTop: 20,
     },
 
