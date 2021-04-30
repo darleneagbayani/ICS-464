@@ -68,8 +68,8 @@ export default class App extends Component {
 
     return (
       <View style={styles.container}>
+        <Text style={styles.title}>About the App</Text>
         <ScrollView contentContainerStyle={{ paddingTop: 18 }}>
-          <Text style={styles.title}>About the App</Text>
           <Accordion
             activeSections={activeSections}
             sections={CONTENT}

@@ -7,13 +7,13 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       padding: 12,
       backgroundColor: 'transparent',
-      paddingTop: Constants.statusBarHeight,
+      paddingTop: 0,
     },
     title: {
-      textAlign: 'center',
+      alignItems: 'center',
+      padding: 10,
+      paddingTop: 60,
       fontSize: 22,
-      fontWeight: '300',
-      marginBottom: 20,
     },
     header: {
       backgroundColor: '#ffffff',

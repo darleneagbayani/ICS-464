@@ -35,9 +35,9 @@ import  FAQ  from '../FAQ';
       }}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="About" component={About} />
       <Tab.Screen name="Locations" component={Locations} />
       <Tab.Screen name="FAQ" component={FAQ} />
+      <Tab.Screen name="About" component={About} />
     </Tab.Navigator>
     );
   }
