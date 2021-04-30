@@ -34,10 +34,10 @@ import  FAQ  from '../FAQ';
         inactiveTintColor: 'gray',
       }}
     >
-      <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="About" component={About} />
-      <Tab.Screen name="Testing" component={Testing} />
       <Tab.Screen name="FAQ" component={FAQ} />
+      <Tab.Screen name="Testing" component={Testing} />
+      <Tab.Screen name="Home" component={Home} /> 
     </Tab.Navigator>
     );
   }
