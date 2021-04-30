@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     inactive: { // The dropdown box itself
       backgroundColor: 'white',
       borderWidth: 2,
-      borderRadius: 10
+      borderRadius: 2
     }
   });
   export default styles;
