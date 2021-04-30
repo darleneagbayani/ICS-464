@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import  Home  from '../Home';
 import  About from '../About';
-import Testing  from '../Testing';
+import Locations  from '../Locations';
 import  FAQ  from '../FAQ';
 
   const Tab = createBottomTabNavigator();
@@ -19,7 +19,7 @@ import  FAQ  from '../FAQ';
             iconName = focused ? 'ios-home' : 'ios-home-outline';
           } else if (route.name === 'About') {
             iconName = focused ? 'ios-information-circle' : 'ios-information-circle-outline';
-          } else if (route.name === 'Testing') {
+          } else if (route.name === 'Locations') {
             iconName = focused ? 'ios-location' : 'ios-location-outline';
           } else if (route.name === 'FAQ') {
             iconName = focused ? 'md-help-circle' : 'md-help-circle-outline';
@@ -36,7 +36,7 @@ import  FAQ  from '../FAQ';
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="About" component={About} />
-      <Tab.Screen name="Testing" component={Testing} />
+      <Tab.Screen name="Locations" component={Locations} />
       <Tab.Screen name="FAQ" component={FAQ} />
     </Tab.Navigator>
     );

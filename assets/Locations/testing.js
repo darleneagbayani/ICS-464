@@ -1,15 +1,13 @@
 import * as React from 'react';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Card } from 'react-native-paper';
-import { Text, Linking, View } from 'react-native';
+import { Text, Linking } from 'react-native';
 import styles from './styles';
 import Queens from '../images/queens.jpeg';
 import Straub from '../images/straub.jpeg';
 
 function Testing() {
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Testing Locations</Text>
         <ScrollView>
             <Card style={styles.card}>
                 <Card.Cover style={styles.cardIndividual} source={Queens} />
@@ -37,7 +35,6 @@ function Testing() {
                 </Text>
             </Card>
         </ScrollView>
-        </View>
     );
   }
 
