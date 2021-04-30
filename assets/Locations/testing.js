@@ -13,7 +13,7 @@ function Testing() {
                 <Card.Cover style={styles.cardIndividual} source={Queens} />
                 <Text style={styles.descriptionTitle}>The Queen's Medical Center</Text>
                 <Text style={styles.descriptionCaption}>
-                <Text>Address: 1301 Punchbowl St, Honolulu, HI 96813</Text>
+                <Text>Address: 1301 Punchbowl St, Honolulu, HI 96813 (8.8mi)</Text>
                 {"\n"}
                 <Text>Phone Number: (808) 691-1000</Text>
                 {"\n"}
@@ -25,7 +25,7 @@ function Testing() {
                 <Card.Cover style={styles.cardIndividual} source={Straub} />
                 <Text style={styles.descriptionTitle}>Straub Medical Center</Text>
                 <Text style={styles.descriptionCaption}>
-                <Text>Address: 888 S King St, Honolulu, HI 96813</Text>
+                <Text>Address: 888 S King St, Honolulu, HI 96813 (12.4mi)</Text>
                 {"\n"}
                 <Text>Phone Number: (808) 522-4000</Text>
                 {"\n"}
