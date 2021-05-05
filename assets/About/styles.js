@@ -1,42 +1,41 @@
-import { StyleSheet } from 'react-native';
-import Constants from 'expo-constants';
+import {StyleSheet, Dimensions } from 'react-native';
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      padding: 12,
-      backgroundColor: 'transparent',
-      paddingTop: Constants.statusBarHeight,
-    },
-    title: {
-      textAlign: 'center',
-      fontSize: 22,
-      fontWeight: '300',
-      marginBottom: 20,
-    },
-    header: {
-      backgroundColor: '#ffffff',
-      padding: 10,
-    },
-    headerText: {
-      textAlign: 'center',
-      fontSize: 16,
-      fontWeight: '500',
-    },
-    content: {
-      padding: 20,
-      backgroundColor: '#ffffff'
-    },
-    active: {
-      backgroundColor: '#ffffff', // The content that drops down after press
-      borderWidth: 2,
-      borderRadius: 10
-    },
-    inactive: { // The dropdown box itself
-      backgroundColor: 'white',
-      borderWidth: 2,
-      borderRadius: 2
-    }
-  });
-  export default styles;
+  outerContainer: {
+
+  },
+
+  mainHeader: {
+    alignItems: 'center',
+    padding: 10,
+    paddingTop: 60,
+    fontSize: 22,
+  },
+
+  descriptionStyle: {
+    padding: 10,
+    fontSize: 14,
+  },
+
+  question: {
+    padding: 10,
+    fontSize: 14,
+  },
+
+  listStyle: {
+    fontSize: 12,
+  },
+
+  titleStyle: {
+    fontSize: 16,
+  },
+
+  mainDescription: {
+    fontSize: 16,
+    padding: 12,
+  }
+});
+
+export default styles
